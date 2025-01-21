@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽奖配置</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="config-section">
+            <div class="prize-config">
+                <h2>奖品配置</h2>
+                <div class="input-group">
+                    <input type="text" id="prizeInput" placeholder="输入奖品名称">
+                    <button onclick="addPrize()">添加奖品</button>
+                </div>
+                <div class="file-upload">
+                    <label for="prizeImage">上传奖品图片</label>
+                    <input type="file" id="prizeImage" accept="image/*" onchange="handlePrizeImage(event)">
+                </div>
+                <img id="previewImage" class="prize-image" style="display: none;">
+                <ul id="prizeList" class="list"></ul>
+            </div>
+            <div class="participant-config">
+                <h2>参与者名单</h2>
+                <div class="input-group">
+                    <input type="text" id="participantInput" placeholder="输入参与者姓名">
+                    <button onclick="addParticipant()">添加参与者</button>
+                </div>
+                <div class="file-upload">
+                    <label for="excelFile">导入Excel名单</label>
+                    <input type="file" id="excelFile" accept=".xlsx,.xls" onchange="handleExcelFile(event)">
+                </div>
+                <ul id="participantList" class="list"></ul>
+            </div>
+        </div>
+        <div class="actions">
+            <button onclick="saveConfig()" class="save-btn">保存配置</button>
+            <button onclick="exportWinners()" class="export-btn">导出中奖名单</button>
+            <a href="lottery.html" class="nav-btn">进入抽奖</a>
+        </div>
+    </div>
+    <script src="config.js"></script>
+</body>
+</html>

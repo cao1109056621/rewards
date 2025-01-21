@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽奖系统</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="lottery-info">
+            <div class="prize-selector">
+                <h2>选择奖品</h2>
+                <select id="prizeSelect" onchange="updateCurrentPrize()"></select>
+                <img id="currentPrizeImage" class="prize-image" style="display: none;">
+            </div>
+            <div class="info-section">
+                <h2>参与者名单</h2>
+                <ul id="currentParticipants" class="list"></ul>
+            </div>
+        </div>
+        <div class="lottery-section">
+            <div id="result" class="result">准备开始</div>
+            <button id="startBtn" class="start-btn" onclick="startLottery()">开始抽奖</button>
+        </div>
+        <div class="actions">
+            <a href="config.html" class="nav-btn">返回配置</a>
+        </div>
+    </div>
+    <script src="lottery.js"></script>
+</body>
+</html>
